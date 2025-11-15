@@ -22,7 +22,7 @@ export const addService = async (data,image)=>{
       
     } catch (error) {
       alert("Error while adding food");
-      console.log(error);
+      // console.log(error);
       throw error;
       
     }
@@ -33,7 +33,8 @@ export const getService = async () =>{
      const response = await axios.get(API_URL+"/services");
       return response.data;
     } catch (error) {
-        console.log('Error fetching food List', error);
+         console.log('Error fetching Service List')
+        // console.log('Error fetching food List', error);
         throw error;
     }
 }
@@ -43,8 +44,8 @@ export const deleteService = async (foodId)=>{
       const response = await axios.delete(API_URL+"/"+foodId)
    return response.status  === 200;
   } catch (error) {
-    
-    console.log("error while deleting te food", error);
+    console.log("error while deleting te Service")
+    // console.log("error while deleting te food", error);
     throw error; 
   }
 
@@ -67,6 +68,6 @@ export const updateService = async (id, updatedData, image) => {
   const res = await axios.patch(`${API_URL}/${id}`, formData);
   return res.data;
  } catch (error) {
-  console.log(error)
+  // console.log(error)
  }
 };
