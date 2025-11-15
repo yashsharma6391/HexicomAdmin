@@ -21,7 +21,7 @@ router.post("/upload", upload.single("Image"), async (req, res) => {
     await newService.save();
     res.status(201).json(newService);
   } catch (err) {
-    console.error(err);
+    // console.error(err);
     res.status(500).json({ message: "Error adding service" });
   }
 });
@@ -37,7 +37,7 @@ router.delete("/:id", async (req, res) => {
     await Service.findByIdAndDelete(req.params.id);
     res.json({ message: "Service deleted successfully" });
   } catch (err) {
-    console.error(err);
+    // console.error(err);
     res.status(500).json({ message: "Error deleting service" });
   }
 });
@@ -71,7 +71,7 @@ router.patch("/:id", upload.single("Image"), async (req, res) => {
 
     res.json({ message: "Service updated successfully", service });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).json({ message: "Error updating service" });
   }
 });
@@ -94,7 +94,7 @@ router.get("/:id", async (req, res) => {
     res.json(service);
 
   } catch (err) {
-    console.error(err);
+    // console.error(err);
     res.status(500).json({ message: "Error fetching service" });
   }
 });
