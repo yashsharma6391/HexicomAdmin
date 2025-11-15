@@ -1,8 +1,9 @@
 import axios from "axios";
 import { data } from "react-router-dom";
 const BackendUrl = import.meta.env.VITE_BACKEND_URL;
+const AccessPoint = import.meta.env.VITE_ACCESS_POINT;
 
-const API_URL = `${BackendUrl}`;
+const API_URL = `${BackendUrl}/${AccessPoint}`;
 
 export const addService = async (data,image)=>{
     const formData = new FormData();
