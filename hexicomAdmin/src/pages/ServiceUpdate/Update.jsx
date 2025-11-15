@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { updateService } from "../../services/Service";
 const BackendUrl = import.meta.env.VITE_BACKEND_URL;
+const AccessPoint = import.meta.env.VITE_ACCESS_POINT;
 
 const Update = () => {
     const { id } = useParams();
@@ -22,7 +23,7 @@ const Update = () => {
   // Fetch existing data
   const getService = async () => {
     try {
-      const res = await axios.get(`${BackendUrl}/${id}`);
+      const res = await axios.get(`${BackendUrl}${AccessPoint}/${id}`);
       setData({
         ServiceName: res.data.ServiceName,
         ServiceType: res.data.ServiceType,
@@ -55,7 +56,7 @@ const Update = () => {
       navigate("/list"); // redirect to list page
     } catch (err) {
       toast.error("Update failed");
-      console.log(err)
+      // console.log(err)
     }
   };
 
