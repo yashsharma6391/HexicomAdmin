@@ -13,14 +13,14 @@ const ListFood = () => {
     try {
       const data = await getService();
       setList(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       toast.error("Error while reading the Service");
     }
   };
   const removeService = async (foodId) => {
-    console.log(foodId);
+    // console.log(foodId);
     try {
       const success = await deleteService(foodId);
       if (success) {
