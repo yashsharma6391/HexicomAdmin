@@ -15,6 +15,7 @@ const ListFood = () => {
       setList(data);
       console.log(data);
     } catch (error) {
+      console.log(error)
       toast.error("Error while reading the Service");
     }
   };
