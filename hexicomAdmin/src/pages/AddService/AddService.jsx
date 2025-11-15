@@ -41,9 +41,9 @@ const AddService = () => {
     }
    
   };
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  // useEffect(() => {
+  //   console.log(data);
+  // }, [data]);
 
   return (
     <div className="mx-2 mt-2">
